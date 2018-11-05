@@ -1,0 +1,16 @@
+<div class="nested-fields form-inline block">
+  <div class="form-group">
+    <%= f.text_field :name, class: 'form-control input-sm', id: "name", placeholder: "Name" %>
+  </div>
+  <div class="form-group">
+    <%= f.email_field :email, class: 'form-control input-sm', id: "email", placeholder: "Email" %>
+  </div>
+  <div class="form-group">
+    <%= f.number_field :phone, class: 'form-control input-sm', id: "phone", placeholder: "Phone" %>
+  </div>
+  <div class="form-group">
+    <%= f.text_field :address, class: 'form-control input-sm', id: "address", placeholder: "Address" %>
+  </div>
+  <%= link_to_remove_association content_tag(:icon, '', class: "glyphicon glyphicon-remove btn btn-danger btn-sm"), f %>
+  <hr>
+</div>

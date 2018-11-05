@@ -1,0 +1,11 @@
+<tr>
+  <td><%= booking_counter+1 %></td>
+  <td><strong><%= booking.flight.airport.name %>, <%= booking.flight.airport.city.name %></strong> to <strong><%= booking.flight.destination.name %>, <%= booking.flight.destination.city.name %></strong></td>
+  <td><%= booking.flight.plane.airline.name %></td>
+  <td><%= booking.code %></td>
+  <td><%= booking.created_at.strftime("%B %d, %Y") %></td>
+  <td><%= booking.status %></td>
+  <td><%= link_to content_tag(:span, "", class: "glyphicon glyphicon-search", title: "View"), booking %></td>
+  <td><%= booking.actions %></td>
+  <td><%= link_to content_tag(:span, "", class: "glyphicon glyphicon-remove", title: "Delete"), booking, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+</tr>

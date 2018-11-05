@@ -1,0 +1,47 @@
+<%= render 'shared/header' %>
+
+<div class="container">
+<% if notice %>
+  <div class="alert alert-success alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <strong>Success!</strong> <%= notice %>
+  </div>
+<% end %>
+  <% unless @booking.nil? %>
+  <div class="page-header">
+    <h2><%= @booking.flight.airport.city.name %> to <%= @booking.flight.destination.city.name %>
+    <small><%= @booking.flight.plane.airline.name %></small>
+      <span class="pull-right">
+        <span class="btn btn-primary"><i class="glyphicon glyphicon-euro"></i> Pay with Paypal</span>
+        <%= link_to content_tag(:i, '', class: "glyphicon glyphicon-edit"),
+                    edit_booking_path(@booking),
+                    class: 'btn btn-primary',
+                    id: "edit-booking" %>
+
+    </h2>
+  </div>
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="panel panel-default">
+        <%= render 'flights/flight_details' %>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="panel panel-default">
+        <!-- Default panel contents -->
+        <div class="panel-heading">Passengers' Details</div>
+        <ul class="list-group">
+          <% @booking.passengers.each do |passenger| %>
+            <li class="list-group-item"><%= passenger.name %> (<%= passenger.email %>)</li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <% else %>
+  <div class="alert alert-warning alert-dismissible" role="alert">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  <strong>Warning!</strong> There is no booking with such reference number.
+</div>
+  <% end %>
+</div>

@@ -1,0 +1,9 @@
+<div class="col-lg-3 col-md-4">
+  <ul class="list-group">
+    <li class="list-group-item"><h4> <%= flight.airport.city.name %> to <%= flight.destination.city.name %></h4> with <%= flight.plane.airline.name %></li>
+    <li class="list-group-item"><%= number_to_currency(flight.price, locale: :ng)  %></li>
+    <li class="list-group-item"><span class="glyphicon glyphicon-calendar"></span> <%= flight.departure.strftime("%A, %B %d %Y") %></li>
+    <li class="list-group-item"><span class="glyphicon glyphicon-time"></span> <%= flight.departure.strftime("%I:%M %p") %></li>
+    <%= link_to 'Book Flight', new_booking_path(flight_id:flight.id), class: 'btn btn-primary btn-block list-group-item' %>
+  </ul>
+</div>

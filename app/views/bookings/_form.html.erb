@@ -1,0 +1,13 @@
+<%= form_for @booking do |f| %>
+  <%= f.hidden_field :flight_id, value: @flight.id %>
+  <% if user_signed_in? %>
+    <%= f.hidden_field :user_id, value: current_user.id %>
+  <% end %>
+  <%= f.fields_for :passengers do |passenger| %>
+    <%= render "passenger_fields", f: passenger %>
+  <% end %>
+  <div class="links">
+    <%= link_to_add_association 'Add Passenger', f, :passengers, class:"btn btn-default"  %>
+    <%= f.submit 'Submit', class:"btn btn-primary pull-right", id: "submit" %>
+  </div>
+<% end %>

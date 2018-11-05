@@ -1,0 +1,5 @@
+$('h1#page-title').html("Search Results <small><%= j pluralize(@flights.count, 'result') %> found</small>");
+$('div#all-flights').empty().append("<%= j render @flights %>");
+$('html, body').animate({
+        scrollTop: $("#home").offset().top
+    }, 2000);

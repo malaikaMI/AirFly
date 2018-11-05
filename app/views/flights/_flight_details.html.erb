@@ -1,0 +1,8 @@
+<div class="panel-heading">Flight Details</div>
+<ul class="list-group">
+  <li class="list-group-item"><strong>Price: </strong><p><%= number_to_currency(@flight.price, locale: :ng) %></p></li>
+  <li class="list-group-item"><strong>Departure Airport: </strong><p><%= @flight.airport.name %>, <%= @flight.airport.city.name %></p></li>
+  <li class="list-group-item"><strong>Arival Airport: </strong><p><%= @flight.destination.name %>, <%= @flight.destination.city.name %></p></li>
+  <li class="list-group-item"><strong>Departure Date: </strong><p><%= @flight.departure.strftime('%A, %B %-m, %Y') %></p></li>
+  <li class="list-group-item"><strong>Departure Time: </strong><p><%= @flight.departure.strftime('%l:%M %P %Z') %></p></li>
+</ul>

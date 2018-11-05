@@ -1,0 +1,23 @@
+<%= render 'shared/header' %>
+<div class="container">
+  <div class="page-header">
+    <h1><%= @flight.airport.city.name %> to <%= @flight.destination.city.name %> <small><%= @flight.plane.airline.name %></small></h1>
+  </div>
+  <div class="row">
+    <div class="col-lg-8">
+      <div class="panel panel-default">
+        <div class="panel-heading">Flight Details<icon class=""></div>
+        <ul class="list-group">
+          <li class="list-group-item"><h4 class="capitalize">Price<span class="pull-right"><%= number_to_currency(@flight.price, locale: :ng) %></span></h4></li>
+          <li class="list-group-item"><h4 class="capitalize">Departure Airport<span class="pull-right"><%= @flight.airport.name %>, <%= @flight.airport.city.name %></span></h4></li>
+          <li class="list-group-item"><h4 class="capitalize">Arival Airport<span class="pull-right"><%= @flight.destination.name %>, <%= @flight.destination.city.name %></span></h4></li>
+          <li class="list-group-item"><h4 class="capitalize">Departure Date<span class="pull-right"><%= @flight.departure.strftime('%B %-m, %Y') %></span></h4></li>
+          <li class="list-group-item"><h4 class="capitalize">Departure Time<span class="pull-right"><%= @flight.departure.strftime('%l:%M %P %Z') %></span></h4></li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <%= render 'bookings/plane' %>
+    </div>
+  </div>
+</div>

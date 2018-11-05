@@ -1,0 +1,30 @@
+<%= render 'shared/header' %>
+
+<div class="container">
+  <div class="page-header">
+    <h1><%= @flight.airport.city.name %> to <%= @flight.destination.city.name %> <small><%= @flight.plane.airline.name %></small></h1>
+  </div>
+  <div class="row">
+    <div class="col-lg-4">
+      <div class="panel panel-default">
+        <%= render 'flights/flight_details' %>
+      </div>
+    </div>
+    <div class="col-lg-8">
+      <% @booking.errors.each do |name, msg| %>
+      <div class="alert alert-danger alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <strong>Error!</strong> <%= name.to_s.sub(".", " ").capitalize %> <%= msg %>
+      </div>
+      <% end %>
+      <div class="panel panel-default">
+        <div class="panel-heading">Passengers</div>
+        <div class="panel-body">
+          <%= render 'form'%>
+        </div>
+        <div class="panel-footer">&nbsp;</div>
+      </div>
+    </div>
+
+  </div>
+</div>

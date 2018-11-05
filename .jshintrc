@@ -1,0 +1,45 @@
+{
+  "asi": false,
+  "bitwise": true,
+  "browser": true,
+  "camelcase": false,
+  "curly": true,
+  "forin": true,
+  "immed": true,
+  "latedef": "nofunc",
+  "maxlen": 0,
+  "newcap": true,
+  "noarg": true,
+  "noempty": true,
+  "nonew": true,
+  "predef": [
+    "$",
+    "google",
+    "ga",
+    "counter",
+    "countdown",
+    "convertDate",
+
+    "jasmine",
+    "beforeEach",
+    "describe",
+    "expect",
+    "it",
+
+    "inject",
+    "module"
+  ],
+  "quotmark": true,
+  "trailing": true,
+  "undef": true,
+  "unused": true,
+
+  "-W099": false,
+  "-W065": false,
+  "-W015": false,
+  "-W116": false,
+  "-W030": false,
+  "-W082": false,
+  "unused": false
+
+}

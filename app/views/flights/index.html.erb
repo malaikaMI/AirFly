@@ -1,0 +1,16 @@
+<section id="intro" data-speed="6" data-type="background">
+    <div class="container">
+      <%= render partial: 'header' %>
+    </div>
+</section>
+
+<section id="home" data-speed="4" data-type="background">
+    <div class="container">
+      <div class="page-header">
+        <h1 id="page-title">Flights</h1>
+      </div>
+      <div class="row" id="all-flights">
+          <%= render @flights %>
+      </div>
+    </div>
+</section>
